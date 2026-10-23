@@ -172,7 +172,7 @@ and copy/paste the resulting table into this README file below this line.
 |1048576 | 2.32e-01 | 4.07e+00 | 3.14e+00 |
 |2097152 | 5.47e-01 | 9.21e+00 | 6.99e+00 |
 |4194304 | 1.21e+00 | 1.97e+01 | 1.56e+01 |
-```
+
 You should observe that python's built-in sort function is 10-100x faster than yours.
 All functions have the same wort-case asymptotic complexity (i.e. $\Theta(n \log n)$ ),
 but python's built-in sorting function uses lots of optimization tricks to achieve this extra speedupNative python code is not very good at performing these types of optimizations,
