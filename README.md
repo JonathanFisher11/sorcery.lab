@@ -148,32 +148,33 @@ and copy/paste the resulting table into this README file below this line.
 
 <!-- add the table here -->
 | len(xs) | timsort | merge_sorted | quick_sorted |
-|1        | 3.07e-06| 2.92e-06     | 2.29e-06     |
-|2        | 2.58e-06| 9.70e-06     | 1.09e-05     |
-|4        | 1.84e-06| 1.35e-05 | 1.27e-05 |
-|8 | 2.12e-06 | 2.01e-05 | 1.62e-05 |
-|16 | 2.84e-06 | 3.75e-05 | 3.11e-05 |
-|32 | 4.30e-06 | 7.75e-05 | 6.56e-05 |
-|64 | 8.68e-06 | 1.64e-04 | 1.22e-04 |
-|128 | 2.30e-05 | 3.53e-04 | 2.69e-04 |
-|256 | 3.50e-05 | 7.74e-04 | 5.68e-04 |
-|512 | 8.43e-05 | 1.66e-03 | 1.28e-03 |
-|1024 | 1.58e-04 | 3.68e-03 | 2.74e-03 |
-|2048 | 3.47e-04 | 6.21e-03 | 3.23e-03 |
-|4096 | 4.20e-04 | 9.23e-03 | 7.01e-03 |
-|8192 | 8.70e-04 | 1.96e-02 | 1.38e-02 |
-|16384 | 1.86e-03 | 4.37e-02 | 2.99e-02 |
-|32768 | 4.28e-03 | 9.17e-02 | 6.38e-02 |
-|65536 | 9.31e-03 | 2.01e-01 | 1.37e-01 |
-|131072 | 2.01e-02 | 4.11e-01 | 2.86e-01 |
-|262144 | 4.32e-02 | 9.10e-01 | 6.12e-01 |
-|524288 | 1.00e-01 | 1.94e+00 | 1.39e+00 |
-|1048576 | 2.37e-01 | 4.01e+00 | 3.10e+00 |
-
+| --- | --- | ---| --- |
+|1 | 2.09e-06 | 1.96e-06 | 1.31e-06 |
+|2 | 1.55e-06 | 6.14e-06 | 6.63e-06 |
+|4 | 1.12e-06 | 7.82e-06 | 7.44e-06 |
+|8 | 1.36e-06 | 1.24e-05 | 9.39e-06 |
+|16 | 1.71e-06 | 2.27e-05 | 1.84e-05 |
+|32 | 1.39e-05 | 4.61e-05 | 3.88e-05 |
+|64 | 5.75e-06 | 9.87e-05 | 7.34e-05 |
+|128 | 9.80e-06 | 2.19e-04 | 1.69e-04 |
+|256 | 2.05e-05 | 4.47e-04 | 3.28e-04 |
+|512 | 4.26e-05 | 9.81e-04 | 7.21e-04 |
+|1024 | 9.18e-05 | 2.14e-03 | 1.62e-03 |
+|2048 | 2.02e-04 | 4.43e-03 | 3.18e-03 |
+|4096 | 4.33e-04 | 9.49e-03 | 7.22e-03 |
+|8192 | 9.02e-04 | 2.04e-02 | 1.36e-02 |
+|16384 | 2.06e-03 | 4.48e-02 | 2.97e-02 |
+|32768 | 4.33e-03 | 9.14e-02 | 6.55e-02 |
+|65536 | 9.12e-03 | 2.01e-01 | 1.35e-01 |
+|131072 | 1.99e-02 | 4.18e-01 | 2.87e-01 |
+|262144 | 4.30e-02 | 9.09e-01 | 6.17e-01 |
+|524288 | 1.03e-01 | 1.95e+00 | 1.39e+00 |
+|1048576 | 2.32e-01 | 4.07e+00 | 3.14e+00 |
+|2097152 | 5.47e-01 | 9.21e+00 | 6.99e+00 |
+|4194304 | 1.21e+00 | 1.97e+01 | 1.56e+01 |
 You should observe that python's built-in sort function is 10-100x faster than yours.
 All functions have the same wort-case asymptotic complexity (i.e. $\Theta(n \log n)$ ),
-but python's built-in sorting function uses lots of optimization tricks to achieve this extra speedup.
-Native python code is not very good at performing these types of optimizations,
+but python's built-in sorting function uses lots of optimization tricks to achieve this extra speedupNative python code is not very good at performing these types of optimizations,
 and so the built-in function is written in the C programming language.
 (You can find the [source code of the built-in function on github](https://github.com/python/cpython/blob/c1b1f51cd1632f0b77dacd43092fb44ed5e053a9/Python/bltinmodule.c#L2356)).
 Functions that must be very fast are generally written in C instead of Python.
